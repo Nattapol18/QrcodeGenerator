@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <link rel="stylesheet" href="css/qrcode.css"/>
+</head>
+<body>
+    <div class="nav-buttons">
+        <button class="nav-button active" onclick="showPage('main')">URL QR</button>
+        <button class="nav-button" onclick="showPage('stores')">App & Play Store</button>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage" class="page active">
+        <h1>Generate QR Code from URL</h1>
+        <p>Enter a URL below to generate a QR Code:</p>
+        <input type="text" id="urlInput" placeholder="Enter your URL here" />
+        <button onclick="generateMainQRCode()">Generate QR Code</button>
+        <div id="qrCode"></div>
+    </div>
+
+    <!-- App Store & Play Store Page -->
+    <div id="storesPage" class="page">
+        <h1>App & Play Store QR Codes</h1>
+        <p>Enter both App Store and Play Store URLs:</p>
+        <input type="text" id="appStoreInput" placeholder="Enter App Store URL" />
+        <input type="text" id="playStoreInput" placeholder="Enter Play Store URL" />
+        <button onclick="generateStoreQRCodes()">Generate QR Codes</button>
+        <div class="qr-container">
+            <div>
+                <div id="appStoreQR" class="qr-code"></div>
+                <div class="qr-label">App Store</div>
+            </div>
+            <div>
+                <div id="playStoreQR" class="qr-code"></div>
+                <div class="qr-label">Play Store</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/qrcode.js"></script>
+</body>
+</html>
